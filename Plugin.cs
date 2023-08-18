@@ -1,9 +1,9 @@
 ﻿using BepInEx;
 using CrashUtils.WeaponManager.WeaponSetup;
 using HarmonyLib;
-using System.IO;
 using System.Reflection;
 using UnityEngine;
+using System.IO;
 
 namespace CoolCamUtils
 {
@@ -36,8 +36,10 @@ namespace CoolCamUtils
             {
                 if (CamGn.LookAt)
                 {
+                    // Controls the FOV of the camera to properly focus on the player
                     CamGn.Cam.transform.LookAt(CamGn.PlayerCam.transform);
                     CamGn.Cam.fieldOfView = 100 - Vector3.Distance(CamGn.PlayerCam.transform.position, CamGn.Cam.transform.position);
+                    // Camera has a minimum FOV of 5
                     if (CamGn.Cam.fieldOfView <= 5)
                     {
                         CamGn.Cam.fieldOfView = 5;
@@ -46,15 +48,9 @@ namespace CoolCamUtils
             }
 
         }
-
         public static string ModPath()
         {
             return Assembly.GetExecutingAssembly().Location.Substring(0, Assembly.GetExecutingAssembly().Location.LastIndexOf(Path.DirectorySeparatorChar));
         }
-        
-
-        
     }
-
-    
 }

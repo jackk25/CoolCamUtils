@@ -1,7 +1,6 @@
 ﻿using CrashUtils.WeaponManager.WeaponSetup;
-using HarmonyLib;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace CoolCamUtils
 {
@@ -10,7 +9,6 @@ namespace CoolCamUtils
         public static GameObject Asset;
         public static GameObject weaponPrefab;
         public static GameObject V1MDL;
-
 
         public GameObject CamObj;
         public GameObject PlayerObj;
@@ -23,7 +21,6 @@ namespace CoolCamUtils
         {
             weaponPrefab = CamGunLoader.Assets.LoadAsset<GameObject>("CamGunPrefab");
             V1MDL = CamGunLoader.Assets.LoadAsset<GameObject>("v1_combined");
-
         }
 
         public override GameObject Create(Transform parent)
@@ -38,8 +35,6 @@ namespace CoolCamUtils
 
             return Asset;
         }
-
-        
 
         public override int Slot()
         {
@@ -149,9 +144,10 @@ namespace CoolCamUtils
             Cam.transform.rotation = PlayerCam.transform.rotation;
             Cam.enabled = true;
             Cam.depth = 10;
-            Cam.pixelRect = new Rect(Screen.width * 0.625f, 100, Screen.width * 0.25f, Screen.height * 0.25f);
             ShootAlt = true;
 
+            Display.displays[1].Activate();
+            Cam.targetDisplay = 0;
         }
         public void DisableCams()
         {

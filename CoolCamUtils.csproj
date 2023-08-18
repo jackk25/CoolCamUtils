@@ -22,10 +22,10 @@
   
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>E:\Steam\steamapps\common\ULTRAKILL\ULTRAKILL_Data\Managed\Scraped\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\SwordsEverywhere\lib\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="CrashRefrences">
-      <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\ULTRAKILL\profiles\Speedrunning\BepInEx\plugins\Crash-CrashLibs\CrashRefrences.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\r2modmanPlus-local\ULTRAKILL\profiles\Default\BepInEx\plugins\Crash-CrashLibs\CrashRefrences.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
